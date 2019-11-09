@@ -8,7 +8,8 @@ public class CameraFollow : MonoBehaviour
 	void FixedUpdate()
     {
 		Vector3 newPosition = followTarget.position;
-		newPosition.z = -10;
+		newPosition.z = -10f;
+		newPosition.y += 2f;
 		transform.position = Vector3.Slerp(transform.position, newPosition, followSpeed * Time.deltaTime);
     }
 }
