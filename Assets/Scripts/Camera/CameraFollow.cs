@@ -5,7 +5,7 @@ public class CameraFollow : MonoBehaviour
 	public float followSpeed = 2f;
 	public Transform followTarget;
 
-    void FixedUpdate()
+	void FixedUpdate()
     {
 		Vector3 newPosition = followTarget.position;
 		newPosition.z = -10;
