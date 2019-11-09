@@ -7,14 +7,23 @@ public class ChunkRandomizer : MonoBehaviour
 	public List<GameObject> obstaclePrefabs;
 	public List<GameObject> obstacleHotspots;
 
+	public List<GameObject> collectiblePrefabs;
+	public List<GameObject> collectibleHotspots;
+	public float spawnChance;
+
 	void Start()
     {
 		foreach (GameObject hotspot in obstacleHotspots)
 		{
-			if (Random.Range(0, 100) > 50)
+			if (Random.Range(0, 100) < 50)
 			{
 				Instantiate(obstaclePrefabs[Random.Range(0, obstaclePrefabs.Count)], hotspot.transform.position, Quaternion.identity);
 			}
 		}
     }
+
+	private void FixedUpdate()
+	{
+
+	}
 }

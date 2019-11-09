@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659922689907190165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 25, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7312736183270606505}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794146711944504966}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15, y: 0, z: 0}
+  m_LocalPosition: {x: 15, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7312736183270606505}
@@ -108,10 +108,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs:
   - {fileID: 9060047521212895502, guid: cf8d8cd8cd6ac1a4aa6cbf00e2b5709f, type: 3}
+  - {fileID: 9060047521212895502, guid: e7f727c87f3321e4ebcc716115fed773, type: 3}
+  - {fileID: 9060047521212895502, guid: b67bde6b5ec001343af91cdef25e15c5, type: 3}
   obstacleHotspots:
-  - {fileID: 1181685255311537169}
-  - {fileID: 7036657883767902857}
-  - {fileID: 1594455610902677753}
+  - {fileID: 3605053337959511689}
+  - {fileID: 1794146711944504966}
+  - {fileID: 1659922689907190165}
 --- !u!1 &3605053337959511689
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3605053337959511689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7312736183270606505}
