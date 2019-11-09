@@ -24,4 +24,14 @@ public class PlayerMovement : MonoBehaviour
 	{
 		transform.Translate(Vector2.right * Time.deltaTime * movementSpeed);
 	}
+
+    void OnTriggerEnter2D(Collider2D other) //This is the code for the "Pickups" objects
+    {
+        if (other.gameObject.CompareTag("Pickups"))
+        {
+
+            other.gameObject.SetActive(false);
+        }
+    }
+
 }
