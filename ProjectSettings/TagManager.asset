@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2052471343
+    locked: 0
+  - name: Player
+    uniqueID: 3297890771
+    locked: 0
+  - name: MoneyBag Pickups
+    uniqueID: 3706410781
+    locked: 0
+  - name: Obstacles
+    uniqueID: 2420041993
+    locked: 0
