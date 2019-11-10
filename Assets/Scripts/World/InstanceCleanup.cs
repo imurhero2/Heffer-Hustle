@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleCleanup : MonoBehaviour
+public class InstanceCleanup : MonoBehaviour
 {
 	private void Start()
 	{

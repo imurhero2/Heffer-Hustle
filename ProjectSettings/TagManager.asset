@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - MoneyBag Pickups
-  - Pickups
+  - Money
+  - Milk
   layers:
   - Default
   - TransparentFX
