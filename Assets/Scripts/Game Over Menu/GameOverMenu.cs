@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
+
+
 {
     // Start is called before the first frame update
+    public TMP_Text score;
     void Start()
     {
-        
+        score.text = PlayerMovement.count.ToString();
     }
 
     // Update is called once per frame
