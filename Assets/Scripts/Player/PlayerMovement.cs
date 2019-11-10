@@ -2,11 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
 	public float movementSpeed = 3f;
 	public float jumpForce = 8f;
+	public float milkBoostForce = 16f;
 	public Rigidbody2D rb;
 	public Transform groundCheck;
 	public LayerMask groundLayer;
@@ -39,13 +41,22 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) //This is the code for the "Pickups" objects
     {
-        if (other.gameObject.CompareTag("Pickups"))
+        if (other.gameObject.CompareTag("Money"))
         {
-
-            other.gameObject.SetActive(false);
-            count = count + 100;
+			Destroy(other.gameObject);
+            count += 100;
             SetCountText();
         }
+		else if (other.tag == "Milk")
+		{
+			Destroy(other.gameObject);
+			Vector2 jumpVector = new Vector2(milkBoostForce, milkBoostForce);
+			rb.AddForce(jumpVector, ForceMode2D.Impulse);
+		}
+		else if (other.tag == "Enemy")
+		{
+			SceneManager.LoadScene("Game Over Screen Scene");
+		}
     }
 
     void SetCountText()
@@ -53,7 +64,4 @@ public class PlayerMovement : MonoBehaviour
         
         countText.text = $"Cash: {count.ToString()}";
     }
-
-
-
 }

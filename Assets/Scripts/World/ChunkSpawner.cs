@@ -16,9 +16,12 @@ public class ChunkSpawner : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		if (collision.tag == "Player")
+		{
 		Vector3 spawnLocation =  gameChunkParent.transform.position + new Vector3(30f, 0, 0);
 		var newChunk = Instantiate(chunkPrefab, spawnLocation, Quaternion.identity);
 		newChunk.name = "GameChunk";
+		}
 	}
 
 	private void FixedUpdate()
