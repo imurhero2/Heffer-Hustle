@@ -267,6 +267,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 5
   followTarget: {fileID: 661594313}
+  cam: {fileID: 1711875920}
+  defaultSize: 5
+  zoomedSize: 6
+  extraZoomedSize: 7
 --- !u!1 &1738918065
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,11 +608,11 @@ GameObject:
   - component: {fileID: 2069895564}
   m_Layer: 0
   m_Name: Pig Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!70 &2069895562
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -637,7 +641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd00794f9f82c8e469f5b50e79638481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4.8
+  movementSpeed: 3
+  player: {fileID: 661594313}
 --- !u!50 &2069895564
 Rigidbody2D:
   serializedVersion: 4
@@ -657,7 +662,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 5
 --- !u!212 &2069895566
 SpriteRenderer:
@@ -736,7 +741,7 @@ PrefabInstance:
     - target: {fileID: 650668318728391340, guid: a6d2daf7a2eb0af41adea952462ae097,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.76
+      value: -1.41
       objectReference: {fileID: 0}
     - target: {fileID: 650668318728391340, guid: a6d2daf7a2eb0af41adea952462ae097,
         type: 3}
@@ -853,11 +858,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6699120691297262290, guid: a6d2daf7a2eb0af41adea952462ae097,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6d2daf7a2eb0af41adea952462ae097, type: 3}
 --- !u!1001 &4379191060472553651
@@ -867,16 +867,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7085993741131932766, guid: cf8d8cd8cd6ac1a4aa6cbf00e2b5709f,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 661594313}
     - target: {fileID: 9060047521212895502, guid: cf8d8cd8cd6ac1a4aa6cbf00e2b5709f,
         type: 3}
       propertyPath: m_Name
       value: Test Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: -7085993741131932766, guid: cf8d8cd8cd6ac1a4aa6cbf00e2b5709f,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 661594313}
     - target: {fileID: 9060047521212895506, guid: cf8d8cd8cd6ac1a4aa6cbf00e2b5709f,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -11,7 +11,7 @@ public class InstanceCleanup : MonoBehaviour
 
 	IEnumerator CleanUp()
 	{
-		yield return new WaitForSeconds(15);
+		yield return new WaitForSeconds(25);
 		Destroy(this.gameObject);
 	}
 }

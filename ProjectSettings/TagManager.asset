@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Money
   - Milk
+  - Enemy
+  - Poop
   layers:
   - Default
   - TransparentFX
@@ -41,14 +43,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2052471343
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Player
     uniqueID: 3297890771
+    locked: 0
+  - name: Cow
+    uniqueID: 2505655775
     locked: 0
   - name: MoneyBag Pickups
     uniqueID: 3706410781
