@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 	public Transform groundCheck;
 	public LayerMask groundLayer;
     public TMP_Text countText;
+	public GameObject tootCloud;
 
 	private bool isGrounded;
     public static int count;
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 			Destroy(other.gameObject);
 			Vector2 jumpVector = new Vector2(milkBoostForce, milkBoostForce);
 			rb.AddForce(jumpVector, ForceMode2D.Impulse);
+			StartCoroutine(TootCloud());
 		}
 		else if (other.tag == "Enemy")
 		{
@@ -61,7 +63,13 @@ public class PlayerMovement : MonoBehaviour
 
     void SetCountText()
     {
-        
         countText.text = $"Cash: {count.ToString()}";
     }
+
+	IEnumerator TootCloud()
+	{
+		tootCloud.SetActive(true);
+		yield return new WaitForSeconds(2);
+		tootCloud.SetActive(false);
+	}
 }
