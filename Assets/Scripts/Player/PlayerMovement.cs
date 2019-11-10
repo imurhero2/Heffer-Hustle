@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public TMP_Text countText;
 
 	private bool isGrounded;
-    private int count;
+    public static int count;
 
     private void Start()  //This states that, once the game begins, it will start to count 
     {
