@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,9 +10,18 @@ public class PlayerMovement : MonoBehaviour
 	public Rigidbody2D rb;
 	public Transform groundCheck;
 	public LayerMask groundLayer;
-	private bool isGrounded;
+    public TMP_Text countText;
 
-	private void Update()
+	private bool isGrounded;
+    private int count;
+
+    private void Start()  //This states that, once the game begins, it will start to count 
+    {
+        count = 0;
+        SetCountText();
+    }
+
+    private void Update()
 	{
 		isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.15f, groundLayer);
 
@@ -31,7 +43,17 @@ public class PlayerMovement : MonoBehaviour
         {
 
             other.gameObject.SetActive(false);
+            count = count + 100;
+            SetCountText();
         }
     }
+
+    void SetCountText()
+    {
+        
+        countText.text = $"Cash: {count.ToString()}";
+    }
+
+
 
 }
