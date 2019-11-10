@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour
 		}
 		else
 		{
-			movementSpeed = Mathf.Clamp(PlayerMovement.staticMovementSpeed, 0, 5) - 0.5f;
+			movementSpeed = Mathf.Clamp(PlayerMovement.staticMovementSpeed, 0, 12) - 0.5f;
 		}
 	}
 }

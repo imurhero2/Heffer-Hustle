@@ -52,7 +52,10 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) //This is the code for the "Pickups" objects
     {
-		staticMovementSpeed = movementSpeed;
+		if (!isSlowed)
+		{
+			staticMovementSpeed = movementSpeed;
+		}
 
         if (other.gameObject.CompareTag("Money"))
         {
@@ -72,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
 			if (!isSlowed)
 			{
 				StartCoroutine(PoopSlow());
+				isSlowed = true;
 			}
 		}
 		else if (other.tag == "Enemy")
@@ -103,7 +107,6 @@ public class PlayerMovement : MonoBehaviour
 
 	IEnumerator PoopSlow()
 	{
-		isSlowed = true;
 		var savedSpeed = movementSpeed;
 		movementSpeed -= (movementSpeed / 1.5f);
 		yield return new WaitForSeconds(poopSlowTime);
