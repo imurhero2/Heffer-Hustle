@@ -15,15 +15,19 @@ public class ChunkRandomizer : MonoBehaviour
 	public List<GameObject> moneyHotspots;
 	public float moneyChance;
 
+	static float difficultyScale = 1f;
+
 	void Start()
     {
+		difficultyScale += 0.1f;
+
 		foreach (GameObject hotspot in obstacleHotspots)
 		{
-			if (Random.Range(0, 100) < obstacleChance)
+			if (Random.Range(0, 100) < obstacleChance * difficultyScale)
 			{
 				Instantiate(obstaclePrefabs[Random.Range(0, obstaclePrefabs.Count)], hotspot.transform.position, Quaternion.identity);
 			}
-			else if (Random.Range(0, 100) < milkChance)
+			else if (Random.Range(0, 100) < milkChance * difficultyScale)
 			{
 				Instantiate(milkPrefab, hotspot.transform.position, Quaternion.identity);
 			}
@@ -31,7 +35,7 @@ public class ChunkRandomizer : MonoBehaviour
 
 		foreach (GameObject hotspot in moneyHotspots)
 		{
-			if (Random.Range(0, 100) < moneyChance)
+			if (Random.Range(0, 100) < moneyChance * difficultyScale)
 			{
 				Instantiate(moneyPrefab, hotspot.transform.position, Quaternion.identity);
 			}
