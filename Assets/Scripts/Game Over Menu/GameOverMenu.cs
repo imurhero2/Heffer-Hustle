@@ -12,7 +12,7 @@ public class GameOverMenu : MonoBehaviour
     public TMP_Text score;
     void Start()
     {
-        score.text = PlayerMovement.count.ToString();
+        score.text = PlayerMovement.Money.ToString();
     }
 
     // Update is called once per frame

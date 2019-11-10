@@ -20,7 +20,6 @@ public class ChunkRandomizer : MonoBehaviour
 	void Start()
     {
 		difficultyScale += 0.1f;
-		Debug.Log(difficultyScale);
 
 		foreach (GameObject hotspot in obstacleHotspots)
 		{

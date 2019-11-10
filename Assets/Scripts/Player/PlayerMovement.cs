@@ -18,11 +18,11 @@ public class PlayerMovement : MonoBehaviour
 	private bool isGrounded;
 	private bool isSlowed;
 	private float savedSpeed;
-    public static int count;
+    public static int Money;
 
     private void Start()  //This states that, once the game begins, it will start to count 
     {
-        count = 0;
+        Money = 1000;
         SetCountText();
     }
 
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Money"))
         {
 			Destroy(other.gameObject);
-            count += 100;
+            Money += 100;
             SetCountText();
         }
 		else if (other.tag == "Milk")
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void SetCountText()
     {
-        countText.text = $"Cash: {count.ToString()}";
+        countText.text = $"Cash: {Money.ToString()}";
     }
 
 	IEnumerator TootCloud()
