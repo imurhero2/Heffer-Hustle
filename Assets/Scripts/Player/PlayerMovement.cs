@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using TMPro;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 	public Rigidbody2D rb;
 	public Transform groundCheck;
 	public LayerMask groundLayer;
-    public TMP_Text countText;
+    public Text countText;
 	public GameObject tootCloud;
 
 	private bool isGrounded;
