@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ChunkRandomizer : MonoBehaviour
 {
@@ -23,7 +25,7 @@ public class ChunkRandomizer : MonoBehaviour
 
 		foreach (GameObject hotspot in obstacleHotspots)
 		{
-			if (Random.Range(0, 100) < obstacleChance * difficultyScale)
+			if (Random.Range(0, 100) < Mathf.Clamp(obstacleChance * difficultyScale, 0, 90))
 			{
 				Instantiate(obstaclePrefabs[Random.Range(0, obstaclePrefabs.Count)], hotspot.transform.position, Quaternion.identity);
 			}

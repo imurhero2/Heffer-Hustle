@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverMenu : MonoBehaviour
 
 
 {
     // Start is called before the first frame update
-    public TMP_Text score;
+    public Text score;
     void Start()
     {
         score.text = PlayerMovement.Money.ToString();
@@ -23,7 +21,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("Santiagos Scene");
+        SceneManager.LoadScene("Main Scene");
     }
 
     public void ReturnToTitle()

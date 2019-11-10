@@ -1,29 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public GameObject mainMenuPanel;
+	public GameObject creditsPanel;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void Start()
+	{
+		mainMenuPanel.SetActive(true);
+		creditsPanel.SetActive(false);
+	}
 
-    public void NewGame()
+	public void NewGame()
     {
-        SceneManager.LoadScene("Santiagos Scene"); 
+        SceneManager.LoadScene("Main Scene"); 
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
+
+	public void ToggleCredits(bool toggle)
+	{
+		mainMenuPanel.SetActive(!toggle);
+		creditsPanel.SetActive(toggle);
+	}
 }

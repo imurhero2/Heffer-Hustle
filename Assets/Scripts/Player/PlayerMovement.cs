@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 	public float movementSpeed = 3f;
+	public static float staticMovementSpeed;
 	public float jumpForce = 8f;
 	public float milkBoostForce = 16f;
 	public float poopSlowTime = 2f;
@@ -17,11 +18,13 @@ public class PlayerMovement : MonoBehaviour
 
 	private bool isGrounded;
 	private bool isSlowed;
+	private bool readyToIncrease;
 	private float savedSpeed;
     public static int Money;
 
     private void Start()  //This states that, once the game begins, it will start to count 
     {
+		readyToIncrease = true;
         Money = 1000;
         SetCountText();
     }
@@ -40,10 +43,17 @@ public class PlayerMovement : MonoBehaviour
 	private void FixedUpdate()
 	{
 		transform.Translate(Vector2.right * Time.deltaTime * movementSpeed);
+		if (readyToIncrease)
+		{
+			StartCoroutine(MovementIncrease());
+			readyToIncrease = false;
+		}
 	}
 
     void OnTriggerEnter2D(Collider2D other) //This is the code for the "Pickups" objects
     {
+		staticMovementSpeed = movementSpeed;
+
         if (other.gameObject.CompareTag("Money"))
         {
 			Destroy(other.gameObject);
@@ -81,6 +91,14 @@ public class PlayerMovement : MonoBehaviour
 		tootCloud.SetActive(true);
 		yield return new WaitForSeconds(1);
 		tootCloud.SetActive(false);
+	}
+
+	IEnumerator MovementIncrease()
+	{
+		yield return new WaitForSeconds(10);
+		Debug.Log($"Speed: {movementSpeed}");
+		movementSpeed += 0.25f;
+		readyToIncrease = true;
 	}
 
 	IEnumerator PoopSlow()

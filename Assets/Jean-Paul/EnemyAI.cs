@@ -5,13 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
 	public float movementSpeed = 3f;
-	private float defaultSpeed;
 	public Transform player;
-
-	private void Start()
-	{
-		defaultSpeed = movementSpeed;
-	}
 
 	private void FixedUpdate()
 	{
@@ -19,11 +13,11 @@ public class EnemyAI : MonoBehaviour
 
 		if (Vector3.Distance(this.transform.position, player.transform.position) > 20)
 		{
-			movementSpeed = defaultSpeed + 0.5f;
+			movementSpeed = PlayerMovement.staticMovementSpeed;
 		}
 		else
 		{
-			movementSpeed = defaultSpeed;
+			movementSpeed = Mathf.Clamp(PlayerMovement.staticMovementSpeed, 0, 5) - 0.5f;
 		}
 	}
 }

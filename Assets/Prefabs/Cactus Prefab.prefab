@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 786717961999316390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cactus Prefab
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 4635664037207549263}
   - component: {fileID: 1373725522803438657}
   - component: {fileID: 7421966189431126608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cactus
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

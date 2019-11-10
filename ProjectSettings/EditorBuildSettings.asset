@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Santiago/Title Screen Scene.unity
+    path: Assets/_Scenes/Title Screen Scene.unity
     guid: bd3e39e48aadcb34eb16bd38007b7359
   - enabled: 1
-    path: Assets/Santiago/Santiagos Scene.unity
-    guid: c221401a82d7f66428877fb9e6fb6a6a
+    path: Assets/_Scenes/Main Scene.unity
+    guid: 22662335490a3034691ac7bdafeba494
   - enabled: 1
-    path: Assets/Santiago/Game Over Screen Scene.unity
+    path: Assets/_Scenes/Game Over Screen Scene.unity
     guid: 921d24be449540a4f856e6bdff4e0394
   m_configObjects: {}
